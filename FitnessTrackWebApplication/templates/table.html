@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>employee_info</title>
+    <style>
+         body{
+            background-image:url({{url_for('static',filename='bg_img.png')}});
+            background-repeat:no-repeat;
+            background-attachment:fixed;
+            background-size:cover;
+        }
+
+
+        table,th,td{
+            border:3px solid black;
+            border-collapse: collapse;
+            margin-left:auto;
+            margin-right:auto;
+        }
+        td{
+            background-color:#FFFFFF
+        }
+        th,td{
+            padding:15px;
+            text-align:center;
+
+        }
+        th{
+            background-color:#E0FFFF
+
+        }
+
+
+    </style>
+</head>
+<body >
+<h1><Center>EMPLOYEE HEALTH DETAILS</Center> </h1>
+<table style="width=100%">
+    <tr>
+        <th>
+            USER NAME
+        </th>
+        <th>
+            BLOOD PRESSURE
+        </th>
+        <th>
+            BODY TEMPERATURE
+        </th>
+        <th>
+            OXYGEN SATURATION
+        </th>
+        <th>
+            RESPIRATION RATE
+        </th>
+        <th>
+            HEART RATE
+        </th>
+        <th>
+            BLOOD GLUCOSE
+        </th>
+    </tr>
+    {% for row in record %}
+    <tr>
+        <td>
+            <b> {{row[1]}}</b>
+        </td>
+        <td>
+            {{row[2]}}
+        </td>
+        <td>
+            {{row[3]}}F
+        </td>
+        <td>
+            {{row[4]}}%
+        </td>
+        <td>
+            {{row[5]}}/min
+        </td>
+        <td>
+            {{row[6]}}/min
+
+        </td>
+        <td>
+            {{row[7]}}mg/dL
+        </td>
+    </tr>
+    {% endfor %}
+
+</table>
+
+<script>
+    window.setTimeout(function(){
+        window.location.reload(1);
+        },30000);
+</script>
+</body>
+</html>

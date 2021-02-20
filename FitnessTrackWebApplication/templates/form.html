@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <style>
+        body{
+            background-image:url({{url_for('static',filename='bg_img.png')}});
+            background-repeat:no-repeat;
+            background-attachment:fixed;
+            background-size:cover;
+        }
+        table,th,td{
+            margin-left:auto;
+            margin-right:auto;
+            padding : 10px;
+          }
+        h3{
+            color:red;
+
+        }
+        ::placeholder{
+            color:#9a9ada
+        }
+
+
+    </style>
+
+    <meta charset="UTF-8">
+    <title>login_page</title>
+</head>
+<body>
+
+    <form name="emp" method="post">
+    <table align="center" cellspacing="30" >
+        <tr>
+           <th colspan="2" align="center">
+            <h2>LOGIN</h2>
+           </th>
+        </tr>
+        <tr>
+            <td>
+                <b> USERNAME</b>
+            </td>
+            <td>
+
+                <input type="text" value="" name="username" placeholder="user name">
+
+
+            </td>
+        </tr>
+
+        <tr>
+            <td>
+                <b> PASSWORD</b>
+            </td>
+            <td>
+                <input type="password" value="" name="password" placeholder="password" id="password">
+            </td>
+        </tr>
+        <tr>
+           <td colspan="2" align="center">
+            <input type="submit" name="submit" style="background-color:#E0FFFF" >
+
+           </td>
+        </tr>
+         <tr>
+           <td colspan="2" align="center">
+            <h3 >{{info}}</h3>
+
+           </td>
+        </tr>
+    </table>
+    </form>
+
+
+</body>
+</html>
